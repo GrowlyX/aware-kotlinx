@@ -30,8 +30,7 @@ class Message(
             }
         )
 
-    operator fun set(key: String, value: Any)
-    {
+    operator fun set(key: String, value: Any) = apply {
         content[key] = Json.encodeToJsonElement(value)
     }
 
