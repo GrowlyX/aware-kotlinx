@@ -90,7 +90,7 @@ object AwareHub
         }
 
         coroutineScope {
-            withContext(Dispatchers.Main) {
+            withContext(Dispatchers.IO) {
                 aware.publishConnection.sync()
                     .publish(channel, message)
             }
