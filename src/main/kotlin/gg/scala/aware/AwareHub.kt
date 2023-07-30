@@ -14,7 +14,6 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import java.time.Duration
 import java.util.concurrent.Executors
-import java.util.logging.Level
 
 /**
  * @author GrowlyX
@@ -28,7 +27,7 @@ object AwareHub
     private lateinit var wrappedUri: WrappedAwareUri
     private var client: RedisClient? = null
 
-    var jsonInstance = Json
+    var jsonInstance: Json = Json
 
     fun configure(
         wrappedUri: WrappedAwareUri
