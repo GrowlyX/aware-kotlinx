@@ -30,9 +30,10 @@ class Message(
             }
         )
 
-    operator fun set(key: String, value: Any) = apply {
-        content[key] = Json.encodeToJsonElement(value)
-    }
+    inline operator fun <reified T> set(key: String, value: T) =
+        apply {
+            content[key] = Json.encodeToJsonElement(value)
+        }
 
     suspend fun publish(
         context: AwareThreadContext =
